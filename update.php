@@ -11,7 +11,7 @@
         $location = $_POST["location"];
 
         if(!empty($username) && !empty($location)){
-        // updateUser($id, $username, $location);
+            updateUser($username, $location, $id);
         }
         else{
             echo "<h1>both fields are required</h1>";
