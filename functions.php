@@ -19,7 +19,27 @@ function getUsers(){
 
 function deleteUser($id){
     $conn = openDatabase();
-    $query = "DELETE FROM users WHERE id=$id";
+    $query = "DELETE FROM users WHERE id=:id";
     $result = $conn->prepare($query);
+    $result->bindParam(":id", $id);
+    $result->execute();
+}
+
+function userById($id){
+    $conn = openDatabase();
+    $query = "SELECT * FROM users WHERE id=:id";
+    $result = $conn->prepare($query);
+    $result->bindParam(":id", $id);
+    $result->execute();
+    return $result->fetch();
+}
+
+function updateUser($id, $username, $loc){
+    $conn = openDatabase();
+    $query = "UPDATE users SET username = :username, `location`= :loc WHERE id = :id";
+    $result = $conn->prepare($query);
+    $result->bindParam(":id", $id);
+    $result->bindParam(":username", $username);
+    $result->bindParam(":loc", $loc);
     $result->execute();
 }

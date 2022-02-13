@@ -45,7 +45,7 @@
         <div>
             <?= "<h1>" . $currentUser["username"] . "</h1>"?>
             <?= "<p>" . $currentUser["location"] . "</p>"?>
-            <a class="yellow" href="index.php?update=<?= $currentUser["id"]?>">Update</a>
+            <a class="yellow" href="update.php?id=<?= $currentUser["id"]?>">Update</a>
            <a class="red" href="index.php?delete=<?= $currentUser["id"]?>">Delete</a>
 
         </div>
