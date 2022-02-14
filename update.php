@@ -7,8 +7,10 @@
     $user = userById($id);
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
+        
         $username = $_POST["username"];
         $location = $_POST["location"];
+        
 
         if(!empty($username) && !empty($location)){
             updateUser($username, $location, $id);
@@ -29,7 +31,7 @@
     <title>Update</title>
 </head>
 <body>
-    <form action="update.php" method="POST">
+    <form action="update.php?id=<?= $id?>" method="POST">
         <h1>Update</h1>
         <p>naam: </p><input value="<?= $user["username"] ?>" type="text" name="username"><br>
         <p>locatie: </p><input value="<?= $user["location"] ?>" type="text" name="location"><br>

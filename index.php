@@ -36,8 +36,8 @@
 
     <form action="index.php" method="POST">
         <h1>Create User</h1>
-        <input placeholder="username" name="username" type="text"><br>
-        <input placeholder="location" name="location" type="text"><br>
+        <p>Naam: </p><input placeholder="username" name="username" type="text"><br>
+        <p>Locatie: </p><input placeholder="location" name="location" type="text"><br>
         <input value="create" type="submit">
     </form>
 

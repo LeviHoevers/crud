@@ -36,7 +36,7 @@ function userById($id){
 
 function updateUser($username, $loc, $id){
     $conn = openDatabase();
-    $query = "UPDATE users username = :username, `location`= :loc WHERE id = :id";
+    $query = "UPDATE users SET username = :username, `location`= :loc WHERE id = :id";
     $result = $conn->prepare($query);
     $result->bindParam(":id", $id);
     $result->bindParam(":username", $username);
