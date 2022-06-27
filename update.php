@@ -36,6 +36,7 @@
         <p>naam: </p><input value="<?= $user["username"] ?>" type="text" name="username"><br>
         <p>locatie: </p><input value="<?= $user["location"] ?>" type="text" name="location"><br>
         <input class="yellow" value="save changes" type="submit">
+        <a href="index.php" class="green">go back</a>
     </form>
 </body>
 </html>

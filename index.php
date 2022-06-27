@@ -13,7 +13,7 @@
         $location = $_POST["location"];
 
         if(!empty($username) && !empty($location)){
-        createUser($username, $location);
+            createUser($username, $location);
         }
         else{
             echo "<h1>both fields are required</h1>";
@@ -44,12 +44,12 @@
     <?php foreach($users as $currentUser){ ?>
         <div>
             <?= "<h1>" . $currentUser["username"] . "</h1>"?>
-            <?= "<p>" . $currentUser["location"] . "</p>"?>
-            <a class="yellow" href="update.php?id=<?= $currentUser["id"]?>">Update</a>
+            <?= "<p>id: <span>" . $currentUser["id"] . "</span></p>"?>
+            <?= "<p>locatie: <span>" . $currentUser["location"] . "</span></p>"?>
+            <a class="green" href="update.php?id=<?= $currentUser["id"]?>">Update</a>
            <a class="red" href="index.php?delete=<?= $currentUser["id"]?>">Delete</a>
-
         </div>
     
-    <?php }?> 
+    <?php }?>
 </body>
 </html>
